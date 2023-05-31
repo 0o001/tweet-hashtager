@@ -5,7 +5,7 @@ let groupBy = function(xs, key) {
   }, {});
 };
 
-fetch('./tweets-with-category-and-hashtag.json', {headers: { 'Access-Control-Allow-Origin':'*', mode: 'no-cors'}})
+fetch('./tweets-with-category-and-hashtag.json')
 .then(res => res.json())
 .then(data => {
   let template = document.querySelector('#category');
@@ -35,8 +35,15 @@ fetch('./tweets-with-category-and-hashtag.json', {headers: { 'Access-Control-All
       tweetEl.innerHTML = '';
 
       for (const item of event.target.dataset.ids.split(',')) {
-        fetch(`https://publish.twitter.com/oembed?url=https://twitter.com/Interior/status/${item}`, {headers: { 'Access-Control-Allow-Origin':'*', mode: 'no-cors'}}).
-        then(res => res.json())
+        fetch(`https://publish.twitter.com/oembed?url=https://twitter.com/mertcangokgoz/status/${item}`, {
+          method: 'GET',
+          mode: 'cors',
+          headers: {
+            'Access-Control-Allow-Origin':'*',
+            },
+            redirect: 'follow'
+        })
+        .then(res => res.json())
         .then(data => {
           tweetEl.innerHTML += data.html;
         });
