@@ -39,7 +39,7 @@ fetch('./tweets-with-category-and-hashtag.json')
           method: 'GET',
           mode: 'no-cors',
           headers: {
-            'Access-Control-Allow-Origin':'*',
+            'Access-Control-Allow-Origin':'https://tweet-hashtager.vercel.app/',
             },
             redirect: 'follow'
         })
