@@ -24,6 +24,9 @@
           </div>
           <div class="sidebar-content">
             <nav class="menu open-current-submenu">
+              <div style="text-align: center;">
+                <input type="text" placeholder="Search Category or Hashtag" class="search" />
+              </div>
               <ul>
                 <li class="menu-header" style="padding-top: 20px"><span> CATEGORIES </span></li>
                 <template id="category">
@@ -52,7 +55,7 @@
             <a id="btn-toggle" href="#" class="sidebar-toggler break-point-sm">
               <i class="ri-menu-line ri-xl"></i>
             </a>
-            <span class="tweets">
+            <span class="tweets" style="text-align: center;">
             </span>
         </main>
         <div class="overlay"></div>
@@ -61,5 +64,6 @@
   <script src='https://unpkg.com/@popperjs/core@2'></script>
   <script src="./script.js"></script>
   <script src="./hashtag.js" defer></script>
+  <script defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 </body>
 </html>

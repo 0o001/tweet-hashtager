@@ -35,17 +35,14 @@ fetch('./tweets-with-category-and-hashtag.json')
       tweetEl.innerHTML = '';
 
       for (const item of event.target.dataset.ids.split(',')) {
-        fetch(`https://cors-anywhere.herokuapp.com/https://publish.twitter.com/oembed?url=https://twitter.com/mertcangokgoz/status/${item}`, {
-          headers: {
-            'Access-Control-Allow-Origin':'*',
-            },
-        })
-        .then(res => res.json())
-        .then(data => {
-          tweetEl.innerHTML += data.html;
-        });
+        twttr.ready(function (twttr) {
+          twttr.widgets.createTweet(item, tweetEl, {
+            theme: 'light',
+            conversation: 'none',
+            dnt: true,
+          });
+      });
       }
-      
     }
   })
 
