@@ -35,9 +35,9 @@ fetch('./tweets-with-category-and-hashtag.json')
       tweetEl.innerHTML = '';
 
       for (const item of event.target.dataset.ids.split(',')) {
-        fetch(`https://publish.twitter.com/oembed?url=https://twitter.com/mertcangokgoz/status/${item}`, {
+        fetch(`https://cors-anywhere.herokuapp.com/https://publish.twitter.com/oembed?url=https://twitter.com/mertcangokgoz/status/${item}`, {
           headers: {
-            'Access-Control-Allow-Origin':'https://tweet-hashtager.vercel.app/',
+            'Access-Control-Allow-Origin':'*',
             },
         })
         .then(res => res.json())
