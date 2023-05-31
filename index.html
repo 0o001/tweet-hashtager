@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Tweet Hashtager</title>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css'>
+  <link rel='stylesheet' href='https://unpkg.com/css-pro-layout@1.1.0/dist/css/css-pro-layout.css'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap'>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="layout has-sidebar fixed-sidebar fixed-header">
+      <aside id="sidebar" class="sidebar break-point-sm has-bg-image">
+        <a id="btn-collapse" class="sidebar-collapser"><i class="ri-arrow-left-s-line"></i></a>
+        <div class="image-wrapper">
+          <img src="assets/images/sidebar-bg.jpg" alt="sidebar background" />
+        </div>
+        <div class="sidebar-layout">
+          <div class="sidebar-header">
+            <div class="pro-sidebar-logo">
+              <div>HT</div>
+              <h5>Tweet Hashtager</h5>
+            </div>
+          </div>
+          <div class="sidebar-content">
+            <nav class="menu open-current-submenu">
+              <ul>
+                <li class="menu-header" style="padding-top: 20px"><span> CATEGORIES </span></li>
+                <template id="category">
+                  <li class="menu-item">
+                    <a href="#" class="menu-click">
+                      <span class="menu-icon">
+                        <i class="ri-book-2-fill"></i>
+                      </span>
+                      <span class="menu-title">Documentation</span>
+                    </a>
+                  </li>
+                </template>
+                <span class="menu-category">
+                </span>
+                <li class="menu-header" style="padding-top: 20px"><span> HASHTAGS </span></li>
+                <span class="menu-hashtag">
+                </span>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </aside>
+      <div id="overlay" class="overlay"></div>
+      <div class="layout">
+        <main class="content">
+            <a id="btn-toggle" href="#" class="sidebar-toggler break-point-sm">
+              <i class="ri-menu-line ri-xl"></i>
+            </a>
+            <span class="tweets">
+            </span>
+        </main>
+        <div class="overlay"></div>
+      </div>
+    </div>
+  <script src='https://unpkg.com/@popperjs/core@2'></script>
+  <script src="./script.js"></script>
+  <script src="./hashtag.js" defer></script>
+</body>
+</html>
