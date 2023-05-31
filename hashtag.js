@@ -36,7 +36,6 @@ fetch('./tweets-with-category-and-hashtag.json')
 
       for (const item of event.target.dataset.ids.split(',')) {
         fetch(`https://publish.twitter.com/oembed?url=https://twitter.com/mertcangokgoz/status/${item}`, {
-          method: 'GET',
           headers: {
             'Access-Control-Allow-Origin':'https://tweet-hashtager.vercel.app/',
             },
