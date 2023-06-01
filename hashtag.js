@@ -1,3 +1,17 @@
+document.querySelector('.search').addEventListener('keyup', function(event) {
+
+  for (const item of document.querySelectorAll('.menu-title')) {
+    const search = event.target.value.toLowerCase();
+
+    if (item.textContent.indexOf(search) > -1) {
+      item.parentNode.style.display = '';
+    } else {
+        item.parentElement.style.display = 'none';
+    }
+  }
+
+});
+
 let groupBy = function(xs, key) {
   return xs.reduce(function(rv, x) {
     (rv[String(x[key]).toLowerCase()] = rv[String(x[key]).toLowerCase()] || []).push(x);
@@ -44,7 +58,9 @@ fetch('./tweets-with-category-and-hashtag.json')
       });
       }
     }
-  })
+  });
+
+  document.querySelector('.menu-title').click();
 
 });
 
